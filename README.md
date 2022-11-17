@@ -12,35 +12,52 @@ Run <bundle exec rake server> to host the server at port 9292.
 
 ## Usage
 
-once the server is running, open a browser, and got to http://localhost:9292/
+Once the server is running, open a browser, and got to http://localhost:9292/
 
 The endpoints are as follows:
 
 /days
-will return all days
+Will return all days
 
 /foods
-will show all food items
+Will show all food items
 
 /days/:id
-will show one day
+Will show one day
 
 /foods/:id
-will show one food item
+Will show one food item
 
 /days/with_foods
-will show all of the days with each days food items nested into that day
+Will show all of the days with each days food items nested into that day
 
 /days/last_seven
-will show the most recent seven days
+Will show the most recent seven days
 
 /days/last_seven/with_foods
-will show the last seven days with nested food data
+Will show the last seven days with nested food data
+
+## support
+
+There is currently no support.
+
+## Roadmap
+
+I intend to include a way to update seed data as the database grows
 
 ## Contributing
 
 I am not currently looking for contributors
 
+## Acknowledgement
+
+This project uses the original weight watchers point system to caluclate points.
+The seed data for this project was gathered from McDonalds Nutritional Calculator.
+
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
+
+## Project Status
+
+Currently on hold.
