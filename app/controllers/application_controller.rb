@@ -21,12 +21,22 @@ class ApplicationController < Sinatra::Base
     days.to_json
   end
 
+  get "/days/last_seven" do
+    week = Day.last(7)
+    week.to_json
+  end
+
+  get "/days/last_seven/with_foods" do
+    week = Day.last(7)
+    week.to_json(include: :foods)
+  end
+
   get "/days/:id" do
     day = Day.find(params[:id])
     day.to_json
   end
 
-  get "/days_with_foods" do
+  get "/days/with_foods" do
     days = Day.all
     days.to_json(include: :foods)
   end
