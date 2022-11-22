@@ -151,6 +151,7 @@ class ApplicationController < Sinatra::Base
   #   food.to_json
   # end
 
+  # untested
   # # delete food from a day
   # delete '/days_with_foods/:day_id/foods/:food_id' do
   #   day = Day.find(params[:day_id])
