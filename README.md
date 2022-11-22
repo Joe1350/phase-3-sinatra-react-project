@@ -12,6 +12,8 @@ Then `bundle exec rake db:migrate db:seed` to migrate and populate the database.
 Or run `bundle exec rake db:migrate` to migrate the database and you can add your own data.
 Run `bundle exec rake server` to host the server at port 9292.
 
+The repository for the frontend is located at: [frontend](https://github.com/Joe1350/phase-3-project-frontend)
+
 ## Usage
 
 Once the server is running, open a browser, and got to http://localhost:9292/

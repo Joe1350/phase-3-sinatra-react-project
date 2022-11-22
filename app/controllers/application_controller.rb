@@ -35,7 +35,7 @@ class ApplicationController < Sinatra::Base
   end
 
   # find day with nested foods by id and create new food
-  post '/day/:id/foods' do
+  post '/days/:id/foods' do
     day = Day.find(params[:id])
     food = day.foods.create!(
       name: params[:name],
