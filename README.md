@@ -7,8 +7,8 @@ Calorie Tracker is a web application to track daily calories, fat, and fiber, an
 ## Instalation
 
 In order to view this project fork and clone the repository.
-Run <bundle install> and <bundle exec rake db:migrate db:seed> to download and populate the database.
-Run <bundle exec rake server> to host the server at port 9292.
+Run `bundle install` and `bundle exec rake db:migrate db:seed` to download and populate the database.
+Run `bundle exec rake server` to host the server at port 9292.
 
 ## Usage
 
@@ -16,26 +16,20 @@ Once the server is running, open a browser, and got to http://localhost:9292/
 
 The endpoints are as follows:
 
-/days
-Will return all days
+GET
+/days_with_foods -- gets a nested list of days with foods
 
-/foods
-Will show all food items
+POST
+/days_with_foods -- allows you to post a new day
+/days_with_foods/:id/foods -- allows you to post a new food to a day
 
-/days/:id
-Will show one day
+PATCH
+/foods/:id -- allows you to update a food by ID
+/days/:id -- allows you to update a day by ID
 
-/foods/:id
-Will show one food item
-
-/days/with_foods
-Will show all of the days with each days food items nested into that day
-
-/days/last_seven
-Will show the most recent seven days
-
-/days/last_seven/with_foods
-Will show the last seven days with nested food data
+DELETE
+/foods/:id -- allows you to delete a food by ID
+/days/:id -- allows you to delete a day by ID. note: will delete all food associated with that day
 
 ## support
 
@@ -51,7 +45,6 @@ I am not currently looking for contributors
 
 ## Acknowledgement
 
-This project uses the original weight watchers point system to caluclate points.
 The seed data for this project was gathered from McDonalds Nutritional Calculator.
 
 ## License
