@@ -7,7 +7,9 @@ Calorie Tracker is a web application to track daily calories, fat, and fiber, an
 ## Instalation
 
 In order to view this project fork and clone the repository.
-Run `bundle install` and `bundle exec rake db:migrate db:seed` to download and populate the database.
+Run `bundle install`
+Then `bundle exec rake db:migrate db:seed` to migrate and populate the database.
+Or run `bundle exec rake db:migrate` to migrate the database and you can add your own data.
 Run `bundle exec rake server` to host the server at port 9292.
 
 ## Usage
@@ -37,7 +39,7 @@ There is currently no support.
 
 ## Roadmap
 
-I intend to include a way to update seed data as the database grows
+Currently there are no future plans
 
 ## Contributing
 
