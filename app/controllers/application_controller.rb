@@ -150,13 +150,19 @@ class ApplicationController < Sinatra::Base
   #   food.to_json
   # end
 
-  # broken
+  # # delete food from a day
+  # delete '/days_with_foods/:day_id/foods/:food_id' do
+  #   day = Day.find(params[:day_id])
+  #   food = day.foods.find(params[:food_id])
+  #   food.destroy
+  # end
+
+  # broken / maybe fixed / untested
   # # find day by id and update foods array
-  # patch '/days_with_foods/:id' do
-  #   day = Day.find(params[:id])
-  #   food = day.foods.update!(
-  #     foods: params[:foods],
-  #   )
+  # patch '/days_with_foods/:day_id/foods/:food_id' do
+  #   day = Day.find(params[:day_id])
+  #   food = day.foods.find(params:[:food_id])
+  #   food.update(params[:food])
   #   {}.to_json(include: :foods)
   # end
 
