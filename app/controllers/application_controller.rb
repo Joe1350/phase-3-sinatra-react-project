@@ -4,11 +4,11 @@ class ApplicationController < Sinatra::Base
   get "/" do
     "
     GET
-    /days_with_foods -- gets a nested list of days with foods
+    /days -- gets a nested list of days with foods
     
     POST
-    /days_with_foods -- allows you to post a new day
-    /days_with_foods/:id/foods -- allows you to post a new food to a day
+    /days -- allows you to post a new day
+    /days/:id/foods -- allows you to post a new food to a day
     
     PATCH
     /days/:id -- allows you to update a day by ID
@@ -20,13 +20,13 @@ class ApplicationController < Sinatra::Base
   end
 
   # get all days with nested foods
-  get "/days_with_foods" do
+  get "/days" do
     days = Day.all
     days.to_json(include: :foods)
   end
 
   # create day with empty food array
-  post '/days_with_foods' do
+  post '/days' do
     day = Day.create(
       date: params[:date],
       foods: params[:foods],
@@ -35,7 +35,7 @@ class ApplicationController < Sinatra::Base
   end
 
   # find day with nested foods by id and create new food
-  post '/days_with_foods/:id/foods' do
+  post '/day/:id/foods' do
     day = Day.find(params[:id])
     food = day.foods.create!(
       name: params[:name],
@@ -73,13 +73,14 @@ class ApplicationController < Sinatra::Base
   delete '/days/:id' do
     day = Day.find(params[:id])
     day.destroy
+    day.to_json # tried removing this line, but then it wouldn't delete
   end
 
   # delete food by id
   delete '/foods/:id' do
     food = Food.find(params[:id])
     food.destroy
-    food.to_json
+    food.to_json # tried removing this line, but then it wouldn't delete
   end
 
 
