@@ -37,14 +37,14 @@ class ApplicationController < Sinatra::Base
   # find day with nested foods by id and create new food
   post '/days/:id/foods' do
     day = Day.find(params[:id])
-    food = day.foods.create!(
+    food = day.foods.create(
       name: params[:name],
       calories: params[:calories],
       fat: params[:fat],
       fiber: params[:fiber],
       day_id: params[:day_id],
     )
-    {}.to_json(include: :foods)
+    day.to_json(include: :foods)
   end
 
   # update day by id
